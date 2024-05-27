@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://tse1.mm.bing.net/th?id=OIP.Nfd-_b2A1A1D6AsvReUmgAHaEc&pid=Api&P=0&h=180');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-style: italic;
+            font-weight: bold;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        label {
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 150px;
+        }
+        input {
+            padding: 8px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px; /* Added margin to create space */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 20px;
+            display: inline-block; /* Added display property */
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forest Fire Prediction</h1>
+    </header>
+    <nav>
+        <a href="home.html/">HOME</a>
+        <a href="/about">ABOUT US</a>
+        <a href="/prediction">PREDICTION</a>
+        <a href="/contact">CONTACT</a>
+    </nav>
+    <main>
+        <h2>Enter Attributes for Prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="x-axis">X-Axis:</label>
+            <input type="number" id="x-axis" name="x-axis" placeholder="Enter 1-9"><br>
+            
+            <label for="y-axis">Y-Axis:</label>
+            <input type="number" id="y-axis" name="y-axis" placeholder="Enter 2-9"><br>
+            
+            <label for="month">Month:</label>
+            <input type="text" id="month" name="month" placeholder="Enter 1-12"><br>
+            
+            <label for="day">Day:</label>
+            <input type="text" id="day" name="day" placeholder="Enter 1-7"><br>
+            
+            <label for="ffmc">FFMC:</label>
+            <input type="number" id="ffmc" name="ffmc" placeholder="Enter 18.7-96.20"><br>
+            
+            <label for="dmc">DMC:</label>
+            <input type="number" id="dmc" name="dmc" placeholder="Enter 1.1-291.3"><br>
+            
+            <label for="dc">DC:</label>
+            <input type="number" id="dc" name="dc" placeholder="Enter 7.9-860.6"><br>
+            
+            <label for="isi">ISI:</label>
+            <input type="number" id="isi" name="isi" placeholder="Enter 0.0-56.10"><br>
+            
+            <label for="temperature">Temperature:</label>
+            <input type="number" id="temperature" name="temperature" placeholder="Enter 2.2-33.30"><br>
+            
+            <label for="rh">RH:</label>
+            <input type="number" id="rh" name="rh" placeholder="Enter 15.0-100"><br>
+            
+            <label for="wind">Wind:</label>
+            <input type="number" id="wind" name="wind" placeholder="Enter 0.40-9.40"><br>
+            
+            <label for="rain">Rain:</label>
+            <input type="number" id="rain" name="rain" placeholder="Enter 0.0-6.4"><br>
+            
+            <button type="submit">Predict</button>
+        </form>
+        {{ prediction_result }}
+    </main>
+</body>
+</html>
